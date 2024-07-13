@@ -1,0 +1,59 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "R4y | Danimals Adventure World", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "R4yHub"})
+
+local tab = Window:MakeTab({
+    Name = "Auto Easter eggs",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local tab2 = Window:MakeTab({
+    Name = "Other",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+	Name = "Notification",
+	Content = "Thanks for using R4yhub",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+tab:AddLabel("Ez UGC")
+
+tab:AddButton({
+    Name = "Start collect Easter eggs",
+    Callback = function()
+        local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+        while Wait() do
+        for i, v in pairs(game:GetService("Workspace").EasterEggs:GetChildren()) do
+         if v.Transparency == 0 then
+             pl.CFrame = v.CFrame
+    end
+    end
+    end
+    end
+})
+
+tab2:AddButton({
+    Name = "Discord sever click to copy",
+    Callback = function()
+        setclipboard("https://discord.gg/ESDH9WJVc5")
+    end
+})
+tab2:AddButton({
+    Name = "My youtube channel click to copy",
+    Callback = function()
+        setclipboard("https://www.youtube.com/@R4yizme")
+    end
+})
+tab2:AddButton({
+    Name = "My tiktok click to copy",
+    Callback = function()
+        setclipboard("https://www.tiktok.com/@imhuynew")
+    end
+})
+
+OrionLib:Init()
